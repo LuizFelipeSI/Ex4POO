@@ -6,23 +6,25 @@ public class Circulo {
     private double perimetro;
 
 
-    public void getRaio() {
-        System.out.println("o raio do circulo é: " + this.raio);
+    public double getRaio() {
+        return this.raio;
     }
 
-    public void getPerimetro() {
+    public double getPerimetro() {
         this.perimetro = 2 * 3.14 * this.raio;
-        System.out.println("o perimetro do circulo é: " + this.perimetro);
+        return this.perimetro;
     }
 
-    /*
     public Circulo(double raio) {
         this.raio = raio;
-    }*/
+    }
 
-    public void calculaArea(double raio) {
-        double area = 3.14 * raio;
-        this.raio = raio;
-        System.out.println("a área do circulo é: " + area);
+    public double calculaArea() {
+        double area = 3.14 * this.raio;
+        return area;
+    }
+
+    public String toString() {
+        return "Área do cículo: " + String.format("%.2f", calculaArea()) + "\nPerímetro do círculo: " + String.format("%.2f", getPerimetro()) + "\nRaio do círuclo: " + getRaio();
     }
 }

@@ -4,21 +4,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ManipuladorDeElementos triangulo = new ManipuladorDeElementos();
-        Triangulo t = new Triangulo();
-        triangulo.obterInformacoesTriangulo(t);
+        ManipuladorDeElementos manipulador = new ManipuladorDeElementos();
 
-        System.out.println("\n");
+        Triangulo t = new Triangulo(3,5,5);
+        Circulo c = new Circulo(5);
+        Quadrilatero q = new Quadrilatero(7,9);
 
-        ManipuladorDeElementos circulo = new ManipuladorDeElementos();
-        Circulo c = new Circulo();
-        circulo.obterInformacoesCirculo(c);
-
-        System.out.println("\n");
-
-        ManipuladorDeElementos quadrilatero = new ManipuladorDeElementos();
-        Quadrilatero q = new Quadrilatero();
-        quadrilatero.obterInformacoesQuadrilatero(q);
-
+        manipulador.obterInformacoes(t, c, q);
     }
 }

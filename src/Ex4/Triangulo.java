@@ -7,13 +7,17 @@ public class Triangulo {
     private double lado2;
 
     private double perimetro;
+    private String forma;
 
-    /*
     public Triangulo(double base, double lado1, double lado2) {
         this.base = base;
         this.lado1 = lado1;
         this.lado2 = lado2;
-    }*/
+    }
+
+    public String getForma() {
+        return this.forma;
+    }
 
     public double getBase() {
         return this.base;
@@ -29,34 +33,41 @@ public class Triangulo {
 
     public double getPerimetro() {
         this.perimetro = this.base + this.lado1 + this.lado2;
-        System.out.println("o perimetro é: " + this.perimetro);
         return this.perimetro;
     }
 
-    public double calcularArea(double base, double lado1, double lado2) {
+    public double calcularArea() {
         double area;
-        this.base = base;
-        this.lado1 = lado1;
-        this.lado2 = lado2;
-        if (base == lado1 && base == lado2) {
-            System.out.println("é um triangulo Equilátero");
-            area = (base * lado1) / 2;
+        if (this.base == this.lado1 && this.base == this.lado2) {
+            area = (this.base * this.lado1) / 2;
             return area;
 
-        } else if (base != lado1 && lado1 == lado2) {
-            System.out.println("é um triangulo Isósceles");
-            area = (base * lado1) / 2;
+        } else if (this.base != this.lado1 && this.lado1 == this.lado2) {
+            area = (this.base * this.lado1) / 2;
             return area;
 
         } else {
-            System.out.println("é um triangulo Escaleno");
-            if (lado1 > lado2) {
-                area = (base * lado1) / 2;
+            if (this.lado1 > this.lado2) {
+                area = (this.base * this.lado1) / 2;
             } else {
-                area = (base * lado2) / 2;
+                area = (this.base * this.lado2) / 2;
             }
-            System.out.println("a área do triangulo é: " + area);
             return area;
         }
+    }
+
+    public String verificarForma() {
+        if (this.base == this.lado1 && this.base == this.lado2) {
+            this.forma = "Equilátero";
+        } else if (this.base != this.lado1 && this.lado1 == this.lado2) {
+            this.forma = "Isósceles";
+        } else {
+            this.forma = "Escaleno";
+        }
+        return this.forma;
+    }
+
+    public String toString() {
+        return "Classificação do Triângulo: " + verificarForma() + "\nÁrea do Triângulo: " + String.format("%.2f", calcularArea()) + "\nPerímetro do Triângulo: " + getPerimetro();
     }
 }

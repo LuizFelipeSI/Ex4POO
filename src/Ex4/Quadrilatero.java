@@ -5,12 +5,17 @@ public class Quadrilatero {
     private double base;
     private double altura;
     private double perimetro;
+    private String forma;
 
-    /*
+
     public Quadrilatero(double base, double altura) {
         this.base = base;
         this.altura = altura;
-    }*/
+    }
+
+    public String getForma() {
+        return this.forma;
+    }
 
     public double getBase() {
         return this.base;
@@ -20,21 +25,26 @@ public class Quadrilatero {
         return this.altura;
     }
 
-    public void getPerimetro() {
+    public double getPerimetro() {
         this.perimetro = (2 * this.base) + (2 * this.altura);
-        System.out.println("o perimetro é: " + this.perimetro);
+        return this.perimetro;
     }
 
-    public void calculaArea(double base, double altura) {
-        double area = base * altura;
-        this.base = base;
-        this.altura = altura;
-        if (base != altura) {
-            System.out.println("A forma é um Retângulo");
-            System.out.println("a área do Retangulo é: " + area);
+    public double calculaArea() {
+        double area = this.base * this.altura;
+        return area;
+    }
+
+    public String verificarForma() {
+        if (this.base != this.altura) {
+            this.forma = "Retângulo";
         } else {
-            System.out.println("A forma é um Quadarado");
-            System.out.println("a área do Quasrado é: " + area);
+            this.forma = "Quadrado";
         }
+        return this.forma;
+    }
+
+    public String toString() {
+        return "Tipo do quadrilátero: " + verificarForma() + "\nÁrea do quadrilátero: " + String.format("%.2f", calculaArea()) + "\nPerímetro do quadrilátero: " + getPerimetro();
     }
 }

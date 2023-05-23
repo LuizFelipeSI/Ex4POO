@@ -2,17 +2,25 @@ package Ex4;
 
 public class ManipuladorDeElementos {
 
-    public void obterInformacoesCirculo(Circulo c) {
-        c.calculaArea(8);
-        c.getRaio();
-        c.getPerimetro();
+    public void obterInformacoes(Object obj) {
+        System.out.println("------------------------------");
+        System.out.println(obj.toString());
+        System.out.println("------------------------------");
     }
-    public void obterInformacoesQuadrilatero(Quadrilatero q) {
-        q.calculaArea(8, 6);
-        q.getPerimetro();
+    public void obterInformacoes(Object obj1, Object obj2) {
+        System.out.println("------------------------------");
+        System.out.println(obj1.toString());
+        System.out.println("------------------------------");
+        System.out.println(obj2.toString());
+        System.out.println("------------------------------");
     }
-    public void obterInformacoesTriangulo(Triangulo t) {
-        t.calcularArea(5, 7, 9);
-        t.getPerimetro();
+    public void obterInformacoes(Object obj1, Object obj2, Object obj3) {
+        System.out.println("------------------------------");
+        System.out.println(obj1.toString());
+        System.out.println("------------------------------");
+        System.out.println(obj2.toString());
+        System.out.println("------------------------------");
+        System.out.println(obj3.toString());
+        System.out.println("------------------------------");
     }
 }
